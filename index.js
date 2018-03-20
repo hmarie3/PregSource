@@ -1,25 +1,27 @@
 var express = require('express');
 var app = express();
 const { Client } = require('pg');
-const url = require('url');
+const { URL } = require('url');
 var bodyParser = require('body-parser');
-
-var scheme = "postgres";
-var host = "localhost";
-var user = "heather";
-var pass = "password";
-var port = "5433";
-var db = "pregsource";
-
-var db_url = url.parse(process.env.DATABASE_URL);
-
-var scheme = db_url.protocol.substr(0, db_url.protocol.length - 1);
-var user = db_url.auth.substr(0, db_url.auth.indexOf(':'));
-var pass = db_url.auth.substr(db_url.auth.indexOf(':') + 1, db_url.auth.length);
-var host = db_url.host.substr(0, db_url.host.indexOf(':'));
-var port = db_url.host.substr(db_url.host.indexOf(':') + 1, db_url.host.length);
-var db = db_url.path.substr(db_url.path.indexOf('/') + 1, db_url.path.length);
-
+console.log(process.env.DATABASE_URL);
+var db_url = process.env.DATABASE_URL;
+//postgres://heather:33433233@localhost/pregsource
+if(typeof db_url !== 'undefined' && db_url !== null) {
+   var scheme = db_url.protocol.substr(0, db_url.protocol.length - 1);
+   var user = db_url.auth.substr(0, db_url.auth.indexOf(':'));
+   var pass = db_url.auth.substr(db_url.auth.indexOf(':') + 1, db_url.auth.length);
+   var host = db_url.host.substr(0, db_url.host.indexOf(':'));
+   var port = db_url.host.substr(db_url.host.indexOf(':') + 1, db_url.host.length);
+   var db = db_url.path.substr(db_url.path.indexOf('/') + 1, db_url.path.length);
+} else {
+   var scheme = "postgres";
+   var host = "localhost";
+   var user = "heather";
+   var pass = "33433233";
+   var port = "5432";
+   var db = "pregsource";
+   
+}
 const client = new Client({
   host: host,
   user: user,
@@ -39,22 +41,25 @@ app.get('/', function(req, res) {
 app.set('view engine', 'ejs');
 
 app.get('/firsttri', function(req,res) {
-   var JSONresult;
+   var MYresult;
    client.query("SELECT * FROM resources WHERE firsttri = 'yes'", function(err, result) {
-      JSONresult = JSON.stringify(result);
-      console.log(err, JSONresult);
+      var JSONresult = JSON.stringify(result);
+      MYresult = JSON.parse(JSONresult);
+      console.log(err, MYresult);
       //var selected = req.body.selected;
       //console.log('User selected: ' + selected);
    });
    res.render("firsttri", {
       //selected : selected,
-      JSONresult : JSONresult
+      MYresult: result
    });
 });
 
 app.listen(5000, function() {
    console.log('Server started on port 5000...');
 });
+
+module.exports = app;
 
    //var pg = require('pg');
 //var connectionString = process.env.DATABASE_URL || 'postgresql://heather:33433233@database.server.com:3211/resources'

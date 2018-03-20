@@ -1,0 +1,25 @@
+heather@heather-laptop ~/Desktop/Current_Classes/CS313_02/node/PregSource $ heroku addons:create heroku-postgr
+esql:hobby-dev
+Creating heroku-postgresql:hobby-dev on ⬢ floating-waters-42841... free
+Database has been created and is available
+ ! This database is empty. If upgrading, you can transfer
+ ! data from another database with pg:copy
+Created postgresql-objective-80791 as DATABASE_URL
+Use heroku addons:docs heroku-postgresql to view documentation
+heather@heather-laptop ~/Desktop/Current_Classes/CS313_02/node/PregSource $ heroku config -s
+DATABASE_URL='postgres://czjyvqofhtfulc:bbc3e1ff622ce396f9c550e84860b092e5eeba70304d6d8d9a497c2b700bb7fa@ec2-54-243-210-70.compute-1.amazonaws.com:5432/dbnuqp9era8dlm'
+heather@heather-laptop ~/Desktop/Current_Classes/CS313_02/node/PregSource $ heroku pg:info
+=== DATABASE_URL
+Plan:                  Hobby-dev
+Status:                Available
+Connections:           0/20
+PG Version:            10.3
+Created:               2018-03-20 00:08 UTC
+Data Size:             7.6 MB
+Tables:                0
+Rows:                  0/10000 (In compliance)
+Fork/Follow:           Unsupported
+Rollback:              Unsupported
+Continuous Protection: Off
+Add-on:                postgresql-objective-80791
+
