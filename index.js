@@ -39,15 +39,14 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/firsttri', function(req,res) {
-   var MYresult;
    client.query("SELECT * FROM resources WHERE firsttri = 'yes'", function(err, result) {
-      var JSONresult = JSON.stringify(result);
+      var JSONresult = result;
       console.log(err, JSONresult);
       res.render("firsttri", {
          EJSresult: JSONresult
+         //EJSresult2: JSON.parse(JSONresult)
       });
    });
-
 });
 
 app.listen(5000, function() {
