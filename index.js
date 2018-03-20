@@ -3,9 +3,8 @@ var app = express();
 const { Client } = require('pg');
 const { URL } = require('url');
 var bodyParser = require('body-parser');
-console.log(process.env.DATABASE_URL);
 var db_url = process.env.DATABASE_URL;
-//postgres://heather:33433233@localhost/pregsource
+
 if(typeof db_url !== 'undefined' && db_url !== null) {
    var scheme = db_url.protocol.substr(0, db_url.protocol.length - 1);
    var user = db_url.auth.substr(0, db_url.auth.indexOf(':'));
@@ -36,23 +35,19 @@ app.get('/', function(req, res) {
    res.render('home');
 });
 
-//var selected;
-
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/firsttri', function(req,res) {
    var MYresult;
    client.query("SELECT * FROM resources WHERE firsttri = 'yes'", function(err, result) {
       var JSONresult = JSON.stringify(result);
-      MYresult = JSON.parse(JSONresult);
-      console.log(err, MYresult);
-      //var selected = req.body.selected;
-      //console.log('User selected: ' + selected);
+      console.log(err, JSONresult);
+      res.render("firsttri", {
+         EJSresult: JSONresult
+      });
    });
-   res.render("firsttri", {
-      //selected : selected,
-      MYresult: result
-   });
+
 });
 
 app.listen(5000, function() {
@@ -60,39 +55,3 @@ app.listen(5000, function() {
 });
 
 module.exports = app;
-
-   //var pg = require('pg');
-//var connectionString = process.env.DATABASE_URL || 'postgresql://heather:33433233@database.server.com:3211/resources'
-
-
-// app.get('/', function(req, res, next) {
-//    res.render('views/home');
-// });
-
-   // pg.connect(connectionString, function(err, resource, done) {
-   //    if(err) {
-   //       return console.error('error fetching resource', err)
-   //    }
-   //    console.log('connected to database');
-   //    resource.query('SELECT srcurl FROM resources WHERE firsttri = yes', function(err, result) {
-   //       if(err) {
-   //          return console.error('error running query', err);
-   //       }
-   //       res.send(result);
-   //    });
-   // });
-
-// app.listen(port, function(req, res) {
-//    console.log('pregsource app is listening on port ' + port);
-// });
-
-
-// var resources = new Src({
-//    connectionString: connectionString,
-// });
-// resources.connect();
-
-// resources.query('SELECT srcurl FROM resources WHERE firsttri = yes', (err, res) => {
-//   console.log(err ? err.stack : res.rows[0].message)
-//   resources.end()
-// });
