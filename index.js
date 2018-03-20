@@ -40,11 +40,9 @@ app.set('view engine', 'ejs');
 
 app.get('/firsttri', function(req,res) {
    client.query("SELECT * FROM resources WHERE firsttri = 'yes'", function(err, result) {
-      var JSONresult = result;
-      console.log(err, JSONresult);
+      console.log(err, result);
       res.render("firsttri", {
-         EJSresult: JSONresult
-         //EJSresult2: JSON.parse(JSONresult)
+         EJSresult: result
       });
    });
 });
