@@ -2,18 +2,33 @@
 <html>
 <head>
    <title>PregSource</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script type="text/javascript">
+      function displayResults() {
+         //ajax jquery call
+         $.ajax({
+            url: "/firsttri",
+            context: document.body
+         }).done(function(data) {
+            alert(data);
+            $("#newContent").append(data);
+         });
+      }
+   </script>
 </head>
    <body>
    </html>
-      <form action="/firsttri" method="GET">
-         <label>Select Your Trimester</label>
-         <select name="selected">
-            <option>First Trimester</option>
-            <option>Second Trimester</option>      
-            <option>Third Trimester</option>      
-            <option>Post-Partum</option>      
-         </select>
-         <button type="submit">See Resources</button>
-      </form>
+      <label>Select Your Trimester</label>
+      <select name="selected">
+         <option>First Trimester</option>
+         <option>Second Trimester</option>      
+         <option>Third Trimester</option>      
+         <option>Post-Partum</option>      
+      </select>
+      <button onclick="displayResults()">See Resources</button>
+      <div id="newContent">
+         
+      </div>
    </body>
 </html>
+

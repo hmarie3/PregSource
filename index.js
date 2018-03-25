@@ -40,8 +40,36 @@ app.set('view engine', 'ejs');
 
 app.get('/firsttri', function(req,res) {
    client.query("SELECT * FROM resources WHERE firsttri = 'yes'", function(err, result) {
-      console.log(err, result);
+      //console.log(err, result);
       res.render("firsttri", {
+         EJSresult: result
+      });
+   });
+});
+
+app.get('/secondtri', function(req,res) {
+   client.query("SELECT * FROM resources WHERE secondtri = 'yes'", function(err, result) {
+      //console.log(err, result);
+      res.render("secondtri", {
+         EJSresult: result
+      });
+   });
+});
+
+app.get('/thirdtri', function(req,res) {
+   client.query("SELECT * FROM resources WHERE thirdtri = 'yes'", function(err, result) {
+      //console.log(err, result);
+      res.render("thirdtri", {
+         EJSresult: result
+      });
+   });
+});
+
+app.get('/postpartum', function(req,res) {
+   client.query("SELECT * FROM resources WHERE postpartum = 'yes'", function(err, result) {
+      //console.log(err, result);
+      console.log(client.query("SELECT * FROM resources WHERE postpartum = 'yes'"));
+      res.render("postpartum", {
          EJSresult: result
       });
    });
