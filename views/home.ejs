@@ -7,20 +7,20 @@
       function displayResults() {
          //ajax jquery call
          var url = "";
-         switch(1/* What do I put here?? */) {
+         switch(0/* What do I put here?? */) {
             case 1:
             alert("in the switch");
                url = "/firsttri";
                break;
-            // case 2:
-            //    url = "/secondtri";
-            //    break;
-            // case 3:
-            //    url = "/thirdtri";
-            //    break;
-            // case 0:
-            //    url = "/postpartum";
-            //    break;
+            case 2:
+               url = "/secondtri";
+               break;
+            case 3:
+               url = "/thirdtri";
+               break;
+            case 0:
+               url = "/postpartum";
+               break;
             }
          $.ajax({
             url: url,
