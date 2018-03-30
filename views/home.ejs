@@ -6,26 +6,54 @@
    <script type="text/javascript">
       function displayResults() {
          //ajax jquery call
-         //hello
-         //you need more than just /first tri
-         $.ajax({
-            url: "/firsttri", //WHAT ABOUT THE OTHERS?????
-            context: document.body
-         }).done(function(data) {
-            alert(data);
-            $("#newContent").append(data);
-         });
+         switch($("#selected").find(":selected").val())
+            case 1:
+               $.ajax({
+                  url: "/firsttri",
+                  context: document.body
+               }).done(function(data) {
+                  alert(data);
+                  $("#newContent").append(data);
+               });
+               break;
+            case 2:
+               $.ajax({
+                  url: "/secondtri",
+                  context: document.body
+               }).done(function(data) {
+                  alert(data);
+                  $("#newContent").append(data);
+               });
+               break;
+            case 3:
+               $.ajax({
+                  url: "/thirdtri",
+                  context: document.body
+               }).done(function(data) {
+                  alert(data);
+                  $("#newContent").append(data);
+               });
+               break;
+            case 0:
+               $.ajax({
+                  url: "/postpartum",
+                  context: document.body
+               }).done(function(data) {
+                  alert(data);
+                  $("#newContent").append(data);
+               });
+               break;
       }
    </script>
 </head>
    <body>
    </html>
       <label>Select Your Trimester</label>
-      <select name="selected">
-         <option>First Trimester</option>
-         <option>Second Trimester</option>      
-         <option>Third Trimester</option>      
-         <option>Post-Partum</option>      
+      <select id="selected">
+         <option value="1">First Trimester</option>
+         <option value="2">Second Trimester</option>      
+         <option value="3">Third Trimester</option>      
+         <option value="0">Post-Partum</option>      
       </select>
       <button onclick="displayResults()">See Resources</button>
       <div id="newContent">
