@@ -29,6 +29,7 @@ var db_url = process.env.DATABASE_URL;
 //   port: port
 // });
 
+const client = new Client();
 client.connect(db_url);
 
 app.get('/', function(req, res) {
