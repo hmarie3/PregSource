@@ -10,8 +10,8 @@
          switch(1/* What do I put here?? */) {
             case 1:
             alert("in the switch");
-            //    url = "/firsttri";
-            //    break;
+               url = "/firsttri";
+               break;
             // case 2:
             //    url = "/secondtri";
             //    break;
@@ -23,7 +23,7 @@
             //    break;
             }
          $.ajax({
-            url: "/firsttri",
+            url: url,
             context: document.body
          }).done(function(data) {
             alert(data);
