@@ -23,7 +23,10 @@ app.get('/', function (request, response) {
       if (err)
        { console.error(err); response.send("Error " + err); }
       else
-       { response.render('firsttri', {results: result.rows[i].srctopic} ); }
+       { 
+        console.log(result.rows);
+        //response.render('firsttri', {results: result.rows[i].srctopic} ); 
+      }
     });
   });
 });
