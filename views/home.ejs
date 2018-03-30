@@ -6,45 +6,43 @@
    <script type="text/javascript">
       function displayResults() {
          //ajax jquery call
-         var choice = getElementById('selected').value();
-         console.log('the choice selected is : ' + choice);
-         // switch(getElementById('selected').value())
-         //    case 1:
-         //       $.ajax({
-         //          url: "/firsttri",
-         //          context: document.body
-         //       }).done(function(data) {
-         //          alert(data);
-         //          $("#newContent").append(data);
-         //       });
-         //       break;
-         //    case 2:
-         //       $.ajax({
-         //          url: "/secondtri",
-         //          context: document.body
-         //       }).done(function(data) {
-         //          alert(data);
-         //          $("#newContent").append(data);
-         //       });
-         //       break;
-         //    case 3:
-         //       $.ajax({
-         //          url: "/thirdtri",
-         //          context: document.body
-         //       }).done(function(data) {
-         //          alert(data);
-         //          $("#newContent").append(data);
-         //       });
-         //       break;
-         //    case 0:
-         //       $.ajax({
-         //          url: "/postpartum",
-         //          context: document.body
-         //       }).done(function(data) {
-         //          alert(data);
-         //          $("#newContent").append(data);
-         //       });
-         //       break;
+         switch(document.getElementById('selected').value())
+            case 1:
+               $.ajax({
+                  url: "/firsttri",
+                  context: document.body
+               }).done(function(data) {
+                  alert(data);
+                  $("#newContent").append(data);
+               });
+               break;
+            case 2:
+               $.ajax({
+                  url: "/secondtri",
+                  context: document.body
+               }).done(function(data) {
+                  alert(data);
+                  $("#newContent").append(data);
+               });
+               break;
+            case 3:
+               $.ajax({
+                  url: "/thirdtri",
+                  context: document.body
+               }).done(function(data) {
+                  alert(data);
+                  $("#newContent").append(data);
+               });
+               break;
+            case 0:
+               $.ajax({
+                  url: "/postpartum",
+                  context: document.body
+               }).done(function(data) {
+                  alert(data);
+                  $("#newContent").append(data);
+               });
+               break;
       }
    </script>
 </head>
