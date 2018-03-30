@@ -17,7 +17,7 @@ if(typeof db_url !== 'undefined' && db_url !== null) {
    var host = "localhost";
    var user = "heather";
    var pass = "33433233";
-   var port = "5432";
+   var port = "5000";
    var db = "pregsource";   
 }
 
@@ -75,7 +75,7 @@ app.get('/postpartum', function(req,res) {
    });
 });
 
-app.listen(port, function() {
+app.listen(process.env.PORT || 5000, function() {
    console.log('Server started on port 5000...');
 });
 
