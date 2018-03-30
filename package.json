@@ -3,7 +3,7 @@
   "description": "Pregnancy Resource Page",
   "version": "1.0.0",
   "engines": {
-    "node": "9.8.0",
+    "node": "9.8.0"
   },
   "main": "index.js",
   "scripts": {
