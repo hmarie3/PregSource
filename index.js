@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var db_url = process.env.DATABASE_URL;
 
 if(typeof db_url !== 'undefined' && db_url !== null) {
-   var scheme = db_url.protocol.substr(0, db_url.protocol.length - 1);
+   //var scheme = db_url.protocol.substr(0, db_url.protocol.length - 1);
    var user = db_url.auth.substr(0, db_url.auth.indexOf(':'));
    var pass = db_url.auth.substr(db_url.auth.indexOf(':') + 1, db_url.auth.length);
    var host = db_url.host.substr(0, db_url.host.indexOf(':'));
