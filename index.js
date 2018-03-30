@@ -66,9 +66,9 @@ app.get('/thirdtri', function(req,res) {
 });
 
 app.get('/postpartum', function(req,res) {
-   client.query("SELECT * FROM resources WHERE postpartum = 'yes'", function(err, result) {
+   client.query("SELECT * FROM resources WHERE postpartum == 'yes'", function(err, result) {
       //console.log(err, result);
-      console.log(client.query("SELECT * FROM resources WHERE postpartum = 'yes'"));
+      //console.log(client.query("SELECT * FROM resources WHERE postpartum = 'yes'"));
       res.render("postpartum", {
          EJSresult: result
       });
