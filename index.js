@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-const { Client } = require('pg');
+const client = require('pg');
 const { URL } = require('url');
 var bodyParser = require('body-parser');
 var db_url = process.env.DATABASE_URL;
@@ -29,7 +29,7 @@ var db_url = process.env.DATABASE_URL;
 //   port: port
 // });
 
-const client = new Client();
+//const client = new Client();
 client.connect(db_url);
 
 app.get('/', function(req, res) {
