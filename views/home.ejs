@@ -6,7 +6,8 @@
    <script type="text/javascript">
       function displayResults() {
          //ajax jquery call
-         switch(document.getElementById('selected').value())
+         alert(document.getElementById('selected').value());
+         switch(document.getElementById('selected').option.value())
             case 1:
                $.ajax({
                   url: "/firsttri",
