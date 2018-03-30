@@ -30,7 +30,7 @@ var db_url = process.env.DATABASE_URL;
 // });
 
 //const client = new Client();
-client.connect(db_url);
+client.connect(process.env.DATABASE_URL);
 
 app.get('/', function(req, res) {
    res.render('home');
