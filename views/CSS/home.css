@@ -3,10 +3,13 @@ body {
 }
 
 #menu {
-   width: 50%;
-   margin: auto;
+   margin: 15px;
    padding: 15px;
    display: inline-block;
+}
+
+#title {
+   font-weight: bold;
 }
 
 ul {
