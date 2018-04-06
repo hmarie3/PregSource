@@ -4,6 +4,8 @@ body {
 
 #menu {
    background-color: #6865ff;
+   margin: 15px;
+   padding: 15px;
 }
 
 ul {
@@ -14,4 +16,10 @@ ul {
 
 li {
    display: inline;
+   margin: 5px;
+   padding: 5px;
+}
+
+select, option, button {
+   background-color: #e8fffd;
 }
