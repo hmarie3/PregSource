@@ -6,9 +6,10 @@
    <script type="text/javascript">
       function displayResults() {
          //ajax jquery call
-         var url = "";
          var choices = document.getElementById('selected').value;
          alert(choices);
+         {
+         var url = "";
          switch(choices) {
             case 1:
             //alert("in the switch");
@@ -24,6 +25,7 @@
                url = "/postpartum";
                break;
             }
+         }
             alert(url);
          $.ajax({
             url: url,
