@@ -42,3 +42,7 @@ select, option, button {
 h1 {
    color: #8c8aff;
 }
+
+#header {
+   position: absolute;
+}
