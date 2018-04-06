@@ -3,7 +3,7 @@ var app = express();
 const { Client } = require('pg');
 const url = require('url');
 var bodyParser = require('body-parser');
-var db_url = url.parse(process.env.DATABASE_URL) || 'postgres=//heather:33433233@localhost:5432/pregsource';
+var db_url = url.parse(process.env.DATABASE_URL) /*|| 'postgres=//heather:33433233@localhost:5432/pregsource'*/;
 
 if(typeof db_url !== 'undefined' && db_url !== null) {
    var scheme = db_url.protocol.substr(0, db_url.protocol.length - 1);
