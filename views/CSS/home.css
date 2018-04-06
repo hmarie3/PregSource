@@ -1,3 +1,18 @@
 body {
    background-color: e8fffd;
 }
+
+#menu {
+   background-color: 6865ff;
+}
+
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+
+}
+
+li {
+   display: inline;
+}
