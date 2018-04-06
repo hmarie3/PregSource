@@ -3,6 +3,7 @@ body {
 }
 
 #menu {
+   align-items: center;
    background-color: #8c8aff;
    margin: 15px;
    padding: 15px;
