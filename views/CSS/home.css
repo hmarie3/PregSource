@@ -3,7 +3,7 @@ body {
 }
 
 #menu {
-   background-color: #8c8aff;
+   background-color: #CCCBFF;
    margin: 15px;
    padding: 15px;
    display: inline-block;
@@ -31,5 +31,5 @@ li {
 }
 
 select, option, button {
-   background-color: #e8fffd;
+   background-color: #faffff;
 }
