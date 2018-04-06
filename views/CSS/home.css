@@ -34,6 +34,6 @@ select, option, button {
    background-color: #faffff;
 }
 
-select:active {
-   background-color: #8c8aff 
+select:hover {
+   outline-color: #8c8aff;
 }
