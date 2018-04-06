@@ -35,9 +35,9 @@ app.get('/', function(req, res) {
    res.render('home');
 });
 
-app.set('views', __dirname + '/views');
+app.use(express.static(_dirname + "/views"));
+//app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-//app.use(express.static(_dirname + "/views"));
 
 app.get('/firsttri', function(req,res) {
    client.query("SELECT * FROM resources WHERE firsttri = 'yes'", function(err, result) {
