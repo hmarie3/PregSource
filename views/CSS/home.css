@@ -3,7 +3,7 @@ body {
 }
 
 #menu {
-   background-color: #CCCBFF;
+   background-color: #8c8aff;
    margin: 15px;
    padding: 15px;
    display: inline-block;
@@ -32,4 +32,8 @@ li {
 
 select, option, button {
    background-color: #faffff;
+}
+
+select:active {
+   background-color: #8c8aff 
 }
