@@ -5,7 +5,7 @@ body {
 
 #menu {
    background-color: #8c8aff;
-   margin: 15px;
+   margin-top: relative;
    padding: 15px;
    display: inline-block;
 }
@@ -45,5 +45,4 @@ h1 {
 
 #header {
    position: absolute;
-   margin-bottom: 15px;
 }
