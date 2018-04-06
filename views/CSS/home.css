@@ -3,9 +3,7 @@ body {
 }
 
 #menu {
-   align-items: center;
-   background-color: #8c8aff;
-   margin: 15px;
+   margin: auto;
    padding: 15px;
    display: inline-block;
 }
