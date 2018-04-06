@@ -1,6 +1,6 @@
 body {
    background-color: #faffff;
-   font-family: "Verdana", Geneva, sans-serif;
+   font-family: Verdana, sans-serif !imporant;
 }
 
 #menu {
