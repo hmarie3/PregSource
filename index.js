@@ -35,7 +35,7 @@ app.get('/', function(req, res) {
    res.render('home');
 });
 
-//app.use(express.static(_dirname + "/views"));
+app.use('/CSS',express.static("/views/CSS"));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
