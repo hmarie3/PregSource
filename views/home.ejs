@@ -6,43 +6,36 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
    <script type="text/javascript">
       function displayResults() {
-         //ajax jquery call
+      // uses switch to set ajax url to display proper database query
          var url = "";
          var choices = document.getElementById('selected').value;
-         //alert(choices);
          switch(choices) {
             case "1":
-            //alert("in case 1");
                url = "/firsttri";
                break;
             case "2":
-            //alert("in case 2");   
                url = "/secondtri";
                break;
             case "3":
-            //alert("in case 3");   
                url = "/thirdtri";
                break;
             case "0":
-            //alert("in case 0");   
                url = "/postpartum";
                break;
             }
-            //alert(url);
          $.ajax({
             url: url,
             context: document.body
          }).done(function(data) {
-            //alert(data);
             $("#newContent").append(data);
          });
       }
    </script>
 </head>
-   <body>
-      <div id="header">
-         <h1 id="title">PregSource</h1>
-         <p>Your one stop pregnancy resource!</p>
+<body>
+   <div id="header">
+      <h1 id="title">PregSource</h1>
+      <p>Your one stop pregnancy resource!</p>
       <div id="menu">
          <ul>
             <li><label>Select Your Trimester: </label></li>
@@ -51,13 +44,14 @@
                   <option value="2">Second Trimester</option>      
                   <option value="3">Third Trimester</option>      
                   <option value="0">Post-Partum</option>      
-               </select></li>
+                </select>
+            </li>
             <li><button onclick="displayResults()">See Resources</button></li>
          </ul>
-      </div>
-      </div>
-      <div id="newContent">
-         
-      </div>
-   </body>
+      </div><!-- end div id="menu" -->
+   </div><!-- end div id="header" -->
+   <div id="newContent">
+   <!-- data from displayResults() will be inserted here -->      
+   </div>
+</body>
 </html>

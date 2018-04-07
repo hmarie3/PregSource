@@ -3,18 +3,6 @@ body {
    font-family: Verdana, sans-serif !imporant;
 }
 
-#menu {
-   background-color: #8c8aff;
-   margin: 15px;
-   padding: 15px;
-   display: inline-block;
-}
-
-#title {
-   font-weight: bold;
-   color: #C425FC;
-}
-
 p {
    font-style: italic;
 }
@@ -35,10 +23,22 @@ select, option, button {
    background-color: #faffff;
 }
 
+h1 {
+   color: #8c8aff;
+}
+
 .topic {
    color: #C425FC;
 }
 
-h1 {
-   color: #8c8aff;
+#menu {
+   background-color: #8c8aff;
+   margin: 15px;
+   padding: 15px;
+   display: inline-block;
+}
+
+#title {
+   font-weight: bold;
+   color: #C425FC;
 }
