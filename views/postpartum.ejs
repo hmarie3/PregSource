@@ -1,5 +1,5 @@
-<h1>Here are the resources for your trimester.</h1>
+<h1>Here are the resources for postpartum.</h1>
 <% for(var i = 0; i < EJSresult.rows.length; i++) { %>
    <h3 class="topic"><%= EJSresult.rows[i].srctopic %></h3>
-   <p class="url"><%= EJSresult.rows[i].srcurl %></p><br>
+   <a class="url" href="<%= EJSresult.rows[i].srcurl %>"><%= EJSresult.rows[i].srcurl %></a><br>
 <% }; %>
