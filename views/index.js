@@ -1,3 +1,10 @@
+/**********************************************************************************************
+* AUTHOR: Heather Brune
+* CLASS: CS 313: 02
+* PROJECT TITLE: PregSource
+* FILE NAME: index.js
+**********************************************************************************************/
+ 
 var express = require('express');
 var app = express();
 const { Client } = require('pg');
